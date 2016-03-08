@@ -26,6 +26,7 @@ class LoginPageClass(object):
         #browser.find_element_by_xpath("//*[@id='user_login']").send_keys('soorajh4@gmail.com')
         browser.find_element_by_name('pwd').send_keys('srj1srj2srj')
         browser.find_element_by_xpath("//*[@name='wp-submit']").submit()
+        #
 
 
 
