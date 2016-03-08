@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions
 
 class CommonActions(object):
     def __init__(self, browser):
+        browser =webdriver.Firefox()
         self.browser = browser
 
 
@@ -44,6 +45,19 @@ class CommonActions(object):
         for element in elements:
             list_contents.append(element.text)
         return list_contents
+
+
+    def accept_alert(self): #acceps alert
+        self.browser.switch_to.alert.accept()
+
+    def switch_to_window(self):
+        """switches to latest window"""
+        browser = self.browser
+        browser.switch_to.window(browser.window_handles[-1])
+
+    def switch_to_frame(self):
+        """"""
+
 
     
 
