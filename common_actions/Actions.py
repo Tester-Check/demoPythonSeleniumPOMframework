@@ -7,13 +7,13 @@ from selenium.webdriver.support import expected_conditions
 
 class CommonActions(object):
     def __init__(self, browser):
-        browser =webdriver.Firefox()
+        #browser =webdriver.Firefox()
         self.browser = browser
 
 
     def open_browser(self, browser_name):
         if(browser_name == "chrome"):
-            self.browser = webdriver.Chrome('/Users/sowmya/Documents/chromedriver')
+            self.browser = webdriver.Chrome('/Users/shreyas/Documents/chromedriver')
         elif(browser_name == "ff"):
             self.browser = webdriver.Firefox()
 

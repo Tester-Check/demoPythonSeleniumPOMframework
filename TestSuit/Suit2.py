@@ -9,7 +9,7 @@ class Uiops(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         perform = CommonActions(cls)
-        cls.browser = perform.open_browser("ff")
+        cls.browser = perform.open_browser("chromesssdguuu1")
 
     def setUp(self):
         self.browser.get('http://jqueryui.com/demos/')
@@ -24,7 +24,11 @@ class Uiops(unittest.TestCase):
 
     def test_demo_page(self):
         JqueryDemos(self.browser).clickonDraggable()
-        JqueryDemos(self.browser).search_for_item()
+        JqueryDemos(self.browser).basic_ui_ops()
+
+    def test_switch_ops(self):
+        self.browser.get('http://www.seleniumframework.com/Practiceform/')
+        
 
 
 

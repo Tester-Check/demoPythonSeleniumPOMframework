@@ -18,9 +18,12 @@ class JqueryDemos():
         CommonActions(self.browser).click(JqueryDemos.Draggable_link)
 
 
-    def search_for_item(self):
+    def basic_ui_ops(self):
         CommonActions(self.browser).set_text(JqueryDemos.Search_field, 'Slider')
         CommonActions(self.browser).click(JqueryDemos.search_button)
         #self.browser.find_element(JqueryDemos.Search_field).send_keys(Keys.ENTER)
         print(CommonActions(self.browser).get_text(JqueryDemos.search_result))
         print(CommonActions(self.browser).get_list(JqueryDemos.menu_items))
+
+
+

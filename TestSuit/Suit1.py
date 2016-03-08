@@ -29,7 +29,6 @@ class VitalFunctionalities(unittest.TestCase):
 
 
     def testverify_page(self):
-        pass
 
         
 
