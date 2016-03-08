@@ -14,6 +14,7 @@ class SFdemoPage():
 
 
     def switch_actions(self):
+        """perform switch actions window/modal/alert"
         CommonActions(self.browser).click(SFdemoPage.new_window_button)
         CommonActions(self.browser).switch_to_latest_window()
         CommonActions(self.browser).click(SFdemoPage.menu_button)
