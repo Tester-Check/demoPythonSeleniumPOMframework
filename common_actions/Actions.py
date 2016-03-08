@@ -50,7 +50,7 @@ class CommonActions(object):
     def accept_alert(self): #acceps alert
         self.browser.switch_to.alert.accept()
 
-    def switch_to_window(self):
+    def switch_to_latest_window(self):
         """switches to latest window"""
         browser = self.browser
         browser.switch_to.window(browser.window_handles[-1])

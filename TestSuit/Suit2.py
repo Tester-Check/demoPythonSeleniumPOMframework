@@ -1,6 +1,7 @@
 import unittest
 from common_actions.Actions import CommonActions
 from Pages.JqueryDemosPage import JqueryDemos
+from Pages.SFdemopage import SFdemoPage
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 
@@ -9,7 +10,7 @@ class Uiops(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         perform = CommonActions(cls)
-        cls.browser = perform.open_browser("chromesssdguuu1")
+        cls.browser = perform.open_browser("chrome")
 
     def setUp(self):
         self.browser.get('http://jqueryui.com/demos/')
@@ -28,7 +29,7 @@ class Uiops(unittest.TestCase):
 
     def test_switch_ops(self):
         self.browser.get('http://www.seleniumframework.com/Practiceform/')
-        
+        SFdemoPage(self.browser).switch_actions()
 
 
 
