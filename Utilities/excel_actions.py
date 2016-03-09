@@ -39,8 +39,8 @@ class excel_utils():
 
 
 
-sl= excel_utils().spit_list(excel_utils().get_data('/Users/shreyas/Documents/TestCase.xls', 0), 'name','password')
-print(sl)
+#sl= excel_utils().spit_list(excel_utils().get_data('/Users/shreyas/Documents/TestCase.xls', 0), 'name','password')
+#print(sl)
 
-cellValue= excel_utils().read_cell('/Users/shreyas/Documents/TestCase.xls', 0, 6, 1)
-print('this is the cell value '+cellValue)
+#cellValue= excel_utils().read_cell('/Users/shreyas/Documents/TestCase.xls', 0, 6, 1)
+#print('this is the cell value '+cellValue)

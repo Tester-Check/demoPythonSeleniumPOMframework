@@ -10,7 +10,7 @@ class Uiops(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         perform = CommonActions(cls)
-        cls.browser = perform.open_browser("chrome")
+        cls.browser = perform.open_browser("ff")
 
     def setUp(self):
         self.browser.get('http://jqueryui.com/demos/')
