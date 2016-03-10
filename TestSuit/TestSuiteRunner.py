@@ -1,13 +1,14 @@
+import pytest
 import unittest
 from TestSuit.Suit2 import Uiops
 
 
-"""set1_tests = unittest.TestLoader().loadTestsFromTestCase(Uiops)
+set1_tests = unittest.TestLoader().loadTestsFromTestCase(Uiops)
 suit1_tests = unittest.TestSuite([set1_tests])
 
-unittest.TextTestRunner(verbosity=2).run(suit1_tests)"""
+unittest.TextTestRunner(verbosity=2).run(suit1_tests)
 
-
+"""
 from TestSuit import HTMLTestRunner
 import os
 from TestSuit.Suit2 import Uiops
@@ -29,3 +30,4 @@ description='Smoke Tests'
 )
 # run the suite using HTMLTestRunner
 runner.run(smoke_tests)
+"""

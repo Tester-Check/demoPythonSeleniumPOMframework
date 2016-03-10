@@ -15,26 +15,42 @@ class SFdemoPage():
     new_message_window = (By.XPATH, "//button[@onclick='newMsgWin()']")
     message_on_new_window = (By.XPATH, "//*[contains(text()='message']")
     new_browser_tab = (By.XPATH, "//button[@onclick='newBrwTab()']")
+    alert_button = (By.XPATH, "//button[@onclick='newAlert()']")
+    timing_alert_button = (By.ID, "timingAlert")
+    change_color_button = (By.ID, "button#colorVar")
 
 
     def switch_actions(self):
-        """perform switch actions pop up window/modal/alert etc"""
-        CommonActions(self.browser).click(self.new_window_button)
-        CommonActions(self.browser).switch_to_latest_window()
-        CommonActions(self.browser).click(self.menu_button)
-        self.browser.close()
-        CommonActions(self.browser).switch_to_latest_window()
-
-        CommonActions(self.browser).click(self.new_message_window)
-        CommonActions(self.browser).switch_to_latest_window()
-        self.browser.maximize_window()
+        browser = self.browser
+        CommonActions(browser).click(self.new_message_window)
+        CommonActions(browser).switch_to_latest_window()
+        browser.maximize_window()
         time.sleep(5)
-        #print(CommonActions(self.browser).get_text(self.message_on_new_window))
-        print(self.browser.page_source)
-        self.browser.close()
-        CommonActions(self.browser).switch_to_latest_window()
+        #print(CommonActions(browser).get_text(self.message_on_new_window))
+        print(browser.page_source)
+        browser.close()
+        CommonActions(browser).switch_to_latest_window()
 
-        print(self.browser.current_url)
-        print(self.browser.get_cookies())
+        print(browser.current_url)
+        print(browser.get_cookies())
+
+        CommonActions(browser).click(self.alert_button)
+        CommonActions(browser).accept_alert()
+        print("--------------------------------------")
+        CommonActions(browser).click(self.timing_alert_button)
+        CommonActions(browser).accept_alert()
+
+        print(CommonActions(browser).get_attribute(self.change_color_button,'color'))
+        CommonActions(browser).click(self.change_color_button)
+        print(CommonActions(browser).get_attribute(self.change_color_button,'color'))
+
+
+
+
+
+
+
+
+
 
 

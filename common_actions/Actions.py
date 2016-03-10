@@ -50,6 +50,7 @@ class CommonActions(object):
 
 
     def accept_alert(self): #acceps alert
+        #WebDriverWait(self.browser, 10).until(expected_conditions.alert_is_present, message="looking for alert")
         self.browser.switch_to.alert.accept()
 
     def switch_to_latest_window(self):
@@ -72,10 +73,11 @@ class CommonActions(object):
 
     def get_attribute(self, locator, attr):
         element = WebDriverWait(self.browser, 10).until(expected_conditions.presence_of_element_located(locator))
-        self.browser.find_element(element).get_attribute(attr)
+        return self.browser.find_element(element).get_attribute(attr)
 
     def wait_for_visibliity(self, locator, attr):
         element = WebDriverWait(self.browser, 10).until(expected_conditions.visibility_of_element_located(locator))
+
 
 
 

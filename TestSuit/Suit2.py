@@ -19,11 +19,11 @@ class Uiops(unittest.TestCase):
 
 
 
-    def test_verify_title(self):
+    def _verify_title(self):
         print(self.browser.title)
         self.assertEqual(self.browser.title, 'jQuery UI Demos | jQuery UI','title did not match')
 
-    def test_demo_page(self):
+    def tesit_demo_page(self):
         JqueryDemos(self.browser).clickonDraggable()
         JqueryDemos(self.browser).basic_ui_ops()
 
