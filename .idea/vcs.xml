@@ -4,6 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/demoPythonSeleniumPOMframework" vcs="Git" />
     <mapping directory="$USER_HOME$/git-repo" vcs="" />
   </component>
 </project>

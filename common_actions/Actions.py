@@ -5,6 +5,7 @@ from selenium.webdriver.common import by
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import Select
 from Utilities.excel_actions import excel_utils
+from selenium.webdriver import ActionChains
 
 
 class CommonActions(object):
@@ -15,7 +16,7 @@ class CommonActions(object):
 
     def open_browser(self, browser_name):
         if(browser_name == "chrome"):
-            self.browser = webdriver.Chrome('/Users/shreyas/Documents/chromedriver')
+            self.browser = webdriver.Chrome('/Users/sowmya/Documents/chromedriver')
         elif(browser_name == "ff"):
             self.browser = webdriver.Firefox()
 
@@ -73,10 +74,35 @@ class CommonActions(object):
 
     def get_attribute(self, locator, attr):
         element = WebDriverWait(self.browser, 10).until(expected_conditions.presence_of_element_located(locator))
-        return self.browser.find_element(element).get_attribute(attr)
+        return element.get_attribute(attr)
 
-    def wait_for_visibliity(self, locator, attr):
+    def wait_for_visibliity(self, locator):
+        WebDriverWait(self.browser, 10).until(expected_conditions.visibility_of_element_located(locator))
+
+
+    def dragondrop(self, drag_point, drop_point):
+        element1 = WebDriverWait(self.browser, 10).until(expected_conditions.visibility_of_element_located(drag_point))
+        element2 = WebDriverWait(self.browser, 10).until(expected_conditions.visibility_of_element_located(drop_point))
+
+        ActionChains(self.browser).drag_and_drop(element1, element2).perform()
+
+    def dragon2(self, drag_point, drop_point):
+        element1 = WebDriverWait(self.browser, 10).until(expected_conditions.visibility_of_element_located(drag_point))
+        element2 = WebDriverWait(self.browser, 10).until(expected_conditions.visibility_of_element_located(drop_point))
+        ActionChains(self.browser).click_and_hold(element1)
+        ActionChains(self.browser).move_to_element(element2)
+        ActionChains(self.browser).release(element2)
+
+    def double_click(self, locator):
         element = WebDriverWait(self.browser, 10).until(expected_conditions.visibility_of_element_located(locator))
+        ActionChains(self.browser).double_click(element)
+
+    def mouse_hover(self, locator):
+        element = WebDriverWait(self.browser, 10).until(expected_conditions.visibility_of_element_located(locator))
+        ActionChains(self.browser).move_to_element(element)
+
+
+
 
 
 

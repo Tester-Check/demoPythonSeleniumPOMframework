@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 from common_actions.Actions import CommonActions
+from selenium.webdriver import ActionChains
 import time
 
 
@@ -17,32 +18,42 @@ class SFdemoPage():
     new_browser_tab = (By.XPATH, "//button[@onclick='newBrwTab()']")
     alert_button = (By.XPATH, "//button[@onclick='newAlert()']")
     timing_alert_button = (By.ID, "timingAlert")
-    change_color_button = (By.ID, "button#colorVar")
+    change_color_button = (By.ID, "colorVar")
+    draggable = (By.ID, "draga")
+    droppable = (By.ID, "dragb")
 
 
     def switch_actions(self):
         browser = self.browser
-        CommonActions(browser).click(self.new_message_window)
-        CommonActions(browser).switch_to_latest_window()
+        first_color = CommonActions(browser).get_attribute(self.change_color_button,'style')
+        #CommonActions(browser).click(self.new_message_window)
+
+        """CommonActions(browser).switch_to_latest_window()
         browser.maximize_window()
-        time.sleep(5)
+
         #print(CommonActions(browser).get_text(self.message_on_new_window))
         print(browser.page_source)
         browser.close()
         CommonActions(browser).switch_to_latest_window()
 
-        print(browser.current_url)
+        print(browser.current_url)"""
         print(browser.get_cookies())
 
         CommonActions(browser).click(self.alert_button)
+
         CommonActions(browser).accept_alert()
         print("--------------------------------------")
-        CommonActions(browser).click(self.timing_alert_button)
-        CommonActions(browser).accept_alert()
+        #CommonActions(browser).click(self.timing_alert_button)
+        #CommonActions(browser).accept_alert()
 
-        print(CommonActions(browser).get_attribute(self.change_color_button,'color'))
+        print(first_color)
         CommonActions(browser).click(self.change_color_button)
-        print(CommonActions(browser).get_attribute(self.change_color_button,'color'))
+        print(CommonActions(browser).get_attribute(self.change_color_button,'style'))
+
+
+        #CommonActions(browser).dragondrop(self.draggable, self.droppable)
+        CommonActions(browser).dragon2(self.draggable, self.droppable)
+        time.sleep(4)
 
 
 

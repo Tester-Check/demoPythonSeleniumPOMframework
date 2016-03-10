@@ -10,10 +10,11 @@ class Uiops(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         perform = CommonActions(cls)
-        cls.browser = perform.open_browser("ff")
+        cls.browser = perform.open_browser("chrome")
 
     def setUp(self):
-        self.browser.get('http://jqueryui.com/demos/')
+        #self.browser.get('http://jqueryui.com/demos/')
+        self.browser.get('http://www.seleniumframework.com/Practiceform/')
         self.browser.implicitly_wait(20)
 
 
@@ -23,13 +24,16 @@ class Uiops(unittest.TestCase):
         print(self.browser.title)
         self.assertEqual(self.browser.title, 'jQuery UI Demos | jQuery UI','title did not match')
 
-    def tesit_demo_page(self):
+    def it_demo_page(self):
         JqueryDemos(self.browser).clickonDraggable()
         JqueryDemos(self.browser).basic_ui_ops()
 
     def test_switch_ops(self):
-        self.browser.get('http://www.seleniumframework.com/Practiceform/')
+
         SFdemoPage(self.browser).switch_actions()
+
+
+
 
 
 
@@ -41,7 +45,8 @@ class Uiops(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        cls.browser.quit()
+        pass
+        #cls.browser.quit()
 
 
 if __name__ == '__main__':
