@@ -28,10 +28,12 @@ class Uiops(unittest.TestCase):
         JqueryDemos(self.browser).clickonDraggable()
         JqueryDemos(self.browser).basic_ui_ops()
 
-    def test_switch_ops(self):
+    def _switch_ops(self):
 
         SFdemoPage(self.browser).switch_actions()
 
+    def test_act2(self):
+        SFdemoPage(self.browser).function2()
 
 
 

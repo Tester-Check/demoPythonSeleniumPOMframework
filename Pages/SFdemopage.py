@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 from common_actions.Actions import CommonActions
 from selenium.webdriver import ActionChains
+from selenium.webdriver.common.keys import Keys
 import time
 
 
@@ -21,6 +22,9 @@ class SFdemoPage():
     change_color_button = (By.ID, "colorVar")
     draggable = (By.ID, "draga")
     droppable = (By.ID, "dragb")
+    text_area =(By.NAME, "vfb-10")
+    date_picker =(By.NAME, "vfb-8")
+    dropdownbox =(By.NAME, "vfb-12")
 
 
     def switch_actions(self):
@@ -54,6 +58,18 @@ class SFdemoPage():
         #CommonActions(browser).dragondrop(self.draggable, self.droppable)
         CommonActions(browser).dragon2(self.draggable, self.droppable)
         time.sleep(4)
+
+
+
+    def function2(self):
+        browser = self.browser
+        CommonActions(browser).set_text(self.date_picker, time.strftime("%m/%d/"+"20"+"%y"))
+        CommonActions(browser).set_text(self.date_picker,Keys.ENTER)
+        CommonActions(browser).select_dropdown_by_value(self.dropdownbox, "Option 2")
+
+
+
+
 
 
 
